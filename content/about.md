@@ -65,6 +65,6 @@ To make the application a good start for beginners, we have decided to include e
 
 Learn more on [Github](https://github.com/enciphers/ThreadsApp).
 
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/enciphers/ThreadsApp) or [ask me on Twitter](https://twitter.com/enciphers_).
+Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/enciphers/ThreadsApp) or [ask me on Twitter](https://twitter.com/EnciphersLabs).
 
 Thanks for reading!
