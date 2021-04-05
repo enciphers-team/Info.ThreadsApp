@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> Threads</title>
+    <link>https://enciphers.github.io/ThreadsAppWeb/</link>
+    <description>Recent content on  Threads</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright><atom:link href="https://enciphers.github.io/ThreadsAppWeb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Threads</title>
+      <link>https://enciphers.github.io/ThreadsAppWeb/about/</link>
+      <pubDate>Wed, 16 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://enciphers.github.io/ThreadsAppWeb/about/</guid>
+      <description>It’s a NodeJs based application and it has also uses EJS as a frontend development templating engine with bootstrap and a mix of simple HTML, CSS is used to build this web application.
+This web application comes up with various web application vulnerabilities just like some real web applications have and these vulnerabilities are the challenges on this web application which need to be solved by its users. So this application acts as a vulnerable web lab where users can have hands-on practice on the different vulnerabilities present in it.</description>
+    </item>
+    
+    <item>
+      <title>Challenges</title>
+      <link>https://enciphers.github.io/ThreadsAppWeb/challenges/</link>
+      <pubDate>Wed, 16 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://enciphers.github.io/ThreadsAppWeb/challenges/</guid>
+      <description>As we know there are many vulnerabilities present in the Threads web application so to find out and exploit each of these vulnerabilities are the challenges on Threads application. We have categorized the vulnerabilities into 4 parts (low,medium,high,critical) on the basis of how it is going to affect your system.
+Note : ( In order to solve the challenges hints are provided with them).
+Here is the list of all the challenges according to the severity category to solve and practise:</description>
+    </item>
+    
+    <item>
+      <title>Disclamier</title>
+      <link>https://enciphers.github.io/ThreadsAppWeb/disclamier/</link>
+      <pubDate>Wed, 16 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://enciphers.github.io/ThreadsAppWeb/disclamier/</guid>
+      <description>Threads application is designed to be an open source lab to help penetration tester perform web application security testing. ENCIPHERS (or anyone in creating Threads application) will not be responsible for any illegal usage of this software and thus hold no liability, whatsoever. USE AT YOUR OWN RISK.</description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>https://enciphers.github.io/ThreadsAppWeb/license/</link>
+      <pubDate>Wed, 16 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://enciphers.github.io/ThreadsAppWeb/license/</guid>
+      <description>GNU General Public License The Threads application is licensed under the GNU General Public License</description>
+    </item>
+    
+    <item>
+      <title>Setting-up Threads</title>
+      <link>https://enciphers.github.io/ThreadsAppWeb/setup/</link>
+      <pubDate>Wed, 16 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://enciphers.github.io/ThreadsAppWeb/setup/</guid>
+      <description>As we know Threads is a vulnerable lab application which looks the same like any other social media platform but the main motto is to solve the vulnerabilities present in it. So here is a guide on how to setup Threads application on your local system which is divided into two parts, one contains the information on how to install the prerequisite before setting up the lab and the other part contains on how to setup lab if you already have the both prerequisite installed in your system.</description>
+    </item>
+    
+    <item>
+      <title>Upcoming Features</title>
+      <link>https://enciphers.github.io/ThreadsAppWeb/upcoming/</link>
+      <pubDate>Wed, 16 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://enciphers.github.io/ThreadsAppWeb/upcoming/</guid>
+      <description>In this page we will tell you about what&amp;rsquo;s new coming in the next update of the Threads application.
+There are several features that we are planning to add in the existing web application to give beginners a good platform to get started:
+Vulnerabilities to be added in Threads   Information leakage via http (cookie,token)
+  Insecure Deserialization
+  Session Cookie without HttpOnly and secure flag set</description>
+    </item>
+    
+  </channel>
+</rss>

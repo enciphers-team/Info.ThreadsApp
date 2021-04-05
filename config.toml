@@ -1,4 +1,5 @@
-baseurl = "http://www.example.com"
+publishDir = "docs"
+baseurl = "https://enciphers.github.io/ThreadsAppWeb/"
 languageCode = "en-us"
 title = " Threads"
 theme = "blackburn"

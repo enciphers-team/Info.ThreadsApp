@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Vulnerable Web Application Lab">
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <title>About Threads &middot;  Threads</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://enciphers.github.io/ThreadsAppWeb/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://enciphers.github.io/ThreadsAppWeb/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://enciphers.github.io/ThreadsAppWeb/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
+
+  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/androidstudio.min.css">
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://enciphers.github.io/ThreadsAppWeb/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://enciphers.github.io/ThreadsAppWeb/">Threads</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://enciphers.github.io/ThreadsAppWeb/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://enciphers.github.io/ThreadsAppWeb/about/"><i class='fa fa-list fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://enciphers.github.io/ThreadsAppWeb/setup/"><i class='fa fa-list fa-fw'></i>Setup</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://enciphers.github.io/ThreadsAppWeb/challenges/"><i class='fa fa-list fa-fw'></i>Challenges</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://akarsh-enciphers.github.io/Solutions/"><i class='fa fa-list fa-fw'></i>Solutions</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://enciphers.github.io/ThreadsAppWeb/upcoming/"><i class='fa fa-list fa-fw'></i>Upcoming Features</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://enciphers.github.io/ThreadsAppWeb/license/"><i class='fa fa-list fa-fw'></i>License</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://enciphers.github.io/ThreadsAppWeb/disclamier/"><i class='fa fa-list fa-fw'></i>Disclamier</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/https://github.com/enciphers/Threads" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>About Threads</h1>
+  <h2>A Vulnerable Web Application Lab</h2>
+</div>
+<div class="content">
+  <p>It’s a NodeJs based application and it has also uses EJS as a frontend development templating engine with bootstrap and a mix of simple HTML, CSS is used to build this web application.</p>
+<p>This web application comes up with various web application vulnerabilities just like some real web applications have and these vulnerabilities are the challenges on this web application which  need to be solved by its users. So this application acts as a vulnerable web lab where users can have hands-on practice on the different vulnerabilities present in it.</p>
+<p>It  consist of  various features like:</p>
+<ul>
+<li>A user can sign up and create his account  in this application.Then he can Login to the Threads application via Login page.</li>
+<li>A user can create posts, he/she can also add images to the post he/she creates.</li>
+<li>A user can also tag other users present on this application in his posts.</li>
+<li>A user can like, comment on other users posts.</li>
+<li>A user can share and bookmark other users post.</li>
+<li>A user can also chat with other users in the group chat section.</li>
+<li>A user can follow another user and also  can get followed by other users.</li>
+<li>A user has to enter his Aws credentials in the config.env file to upload a post containing an image.</li>
+<li>You can add 25 dummy users to the application by entering &lsquo;yes&rsquo; while installing the application.</li>
+<li>A user can delete his account after which all information  like his post,bookmarks,likes,comments,following,followers will get deleted.</li>
+<li>Profile section has bio field where you can write about yourself.</li>
+</ul>
+<p>The idea behind ThreadsApp is to create something which is a go to app, for starting with Web App security. The idle use of this app would be:</p>
+<ul>
+<li>Using the local setup of lab to start with basic web app security learning</li>
+<li>Using the ThreadsApp in basic web hacking trainings</li>
+</ul>
+<p>To make the application a good start for beginners, we have decided to include examples of all  the OWASP Top 10 vulnerabilities [<strong>NOTE</strong>: This release of the app, have some of the examples missing from OWASP Top 10. We will add them in future releases.]</p>
+<p>1 Injection (present)</p>
+<ul>
+<li>NoSQL Injection</li>
+</ul>
+<p>2 Broken Authentication (present)</p>
+<ul>
+<li>JWT</li>
+</ul>
+<p>3 Sensitive Data Exposure (Working on it)</p>
+<p>4 XXE (Working/Will come in further Update)</p>
+<p>5 Broken Access Control (present)</p>
+<ul>
+<li>IDOR</li>
+<li>SSRF</li>
+</ul>
+<p>6 Security Misconfiguration</p>
+<ul>
+<li>Present in the form of rate limits on the comment section.</li>
+<li>No password required for account delete.</li>
+<li>Clickjacking issue with sensitive action (delete account)</li>
+</ul>
+<p>7 Cross-Site Scripting</p>
+<ul>
+<li>Stored cross Site scripting</li>
+<li>Self XSS</li>
+</ul>
+<p>8 Insecure Deserialization (Will come in further update)</p>
+<p>9 Using Component with Known Vulnerabilities (working on it)</p>
+<p>10 Insufficient logging and monitoring (present)</p>
+<ul>
+<li>Present in the form of two or more simultaneous sessions being kept active.</li>
+</ul>
+<p>Learn more on <a href="https://github.com/enciphers/ThreadsApp">Github</a>.</p>
+<p>Have questions or suggestions? Feel free to <a href="https://github.com/enciphers/ThreadsApp">open an issue on GitHub</a> or <a href="https://twitter.com/enciphers_">ask me on Twitter</a>.</p>
+<p>Thanks for reading!</p>
+
+</div>
+
+</div>
+</div>
+<script src="https://enciphers.github.io/ThreadsAppWeb/js/ui.js"></script>
+<script src="https://enciphers.github.io/ThreadsAppWeb/js/menus.js"></script>
+
+
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'Your Google Analytics tracking ID', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+

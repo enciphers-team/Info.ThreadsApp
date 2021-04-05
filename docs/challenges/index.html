@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Vulnerable Web Application Lab">
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <title>Challenges &middot;  Threads</title>
+
+    
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://enciphers.github.io/ThreadsAppWeb/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://enciphers.github.io/ThreadsAppWeb/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://enciphers.github.io/ThreadsAppWeb/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
+
+  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/androidstudio.min.css">
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://enciphers.github.io/ThreadsAppWeb/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://enciphers.github.io/ThreadsAppWeb/">Threads</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://enciphers.github.io/ThreadsAppWeb/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://enciphers.github.io/ThreadsAppWeb/about/"><i class='fa fa-list fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://enciphers.github.io/ThreadsAppWeb/setup/"><i class='fa fa-list fa-fw'></i>Setup</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://enciphers.github.io/ThreadsAppWeb/challenges/"><i class='fa fa-list fa-fw'></i>Challenges</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://akarsh-enciphers.github.io/Solutions/"><i class='fa fa-list fa-fw'></i>Solutions</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://enciphers.github.io/ThreadsAppWeb/upcoming/"><i class='fa fa-list fa-fw'></i>Upcoming Features</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://enciphers.github.io/ThreadsAppWeb/license/"><i class='fa fa-list fa-fw'></i>License</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://enciphers.github.io/ThreadsAppWeb/disclamier/"><i class='fa fa-list fa-fw'></i>Disclamier</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/https://github.com/enciphers/Threads" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2020. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Challenges</h1>
+  <h2>A Vulnerable Web Application Lab</h2>
+</div>
+<div class="content">
+  <p>As we know there are many vulnerabilities present in the Threads web application so to find out and exploit each of  these vulnerabilities are the challenges on Threads application. We have categorized the vulnerabilities into 4 parts (low,medium,high,critical) on the basis of how it is going to affect your system.</p>
+<p><strong>Note</strong> : ( In order to solve the challenges hints are provided with them).</p>
+<p>Here is the list of all the challenges according to the severity category to solve and practise:</p>
+<h2 id="low">Low</h2>
+<h3 id="xssself-xss">XSS(Self-XSS)</h3>
+<p><strong>About</strong>: <a href="https://portswigger.net/web-security/cross-site-scripting/reflected">Self-xss</a> has the behaviour similar to Reflected XSS however it can not be executed with simple ways like Url Crafting, Cross domain request.In this victim themself submit the xss payload (javascript code) in their browser that means you/victim yourself can exploit only. So in order to exploit this vulnerability as an attacker you need to convince the victim to submit/paste the javascript code in the browser (which is not simply not possible). Hence it is considered as a low vulnerability until unless chaining with other vulnerabilities like CSRF.</p>
+<p>Reference to Learn more:<a href="https://portswigger.net/web-security/cross-site-scripting/reflected">Self-Cross Site Scripting</a></p>
+<h3 id="hidden-directories">Hidden Directories</h3>
+<p><strong>About</strong>: Sometimes Application has hidden directories which are not visible on a public website and these can reveal useful information for potential attacks. Hidden Directories can be found via brute force using a wordlist.</p>
+<h3 id="cross-site-request-forgerycsrf">Cross-site Request Forgery(CSRF)</h3>
+<p><strong>About</strong>: In this victim executes unwanted actions on behalf of the attacker on an application in which they are authenticated. <a href="https://owasp.org/www-community/attacks/csrf">CSRF</a> can be done at the places in an application where state change events happen like password change,delete,update and similar. Attackers can trick a victim to click on a link via social engineering and execute the unwanted actions on a web application.</p>
+<p>Reference to Learn more:<a href="https://owasp.org/www-community/attacks/csrf">Cross-site Request Forgery</a>.</p>
+<h3 id="no-password-policy">No Password Policy</h3>
+<p><strong>About</strong>: Sometimes the  application does not require that users should have strong passwords,  which makes it easier for attackers to compromise user accounts. There are many password policy followed by many application like:</p>
+<ul>
+<li>use of both upper-case and lower-case letters (case sensitivity).</li>
+<li>inclusion of one or more numerical digits.</li>
+<li>inclusion of special characters, such as @, #, $.</li>
+<li>prohibition of words found in a password blacklist.</li>
+<li>prohibition of words found in the user&rsquo;s personal information.</li>
+<li>prohibition of use of company name or an abbreviation.</li>
+<li>prohibition of passwords that match the format of calendar dates, license plate numbers, telephone numbers, or other common numbers.</li>
+</ul>
+<p>When all these policies are followed by the application then it becomes tough for attackers to get password for a user account.</p>
+<p>Reference to Learn More:<a href="https://en.wikipedia.org/wiki/Password_policy">No password policy</a></p>
+<h3 id="weak-reset-password-implementation">Weak Reset Password Implementation</h3>
+<p><strong>About</strong>: Password reset functionality is performed within the application,so when passwords are reset they are either rendered within the application or emailed to the user. Many of times the application doesn&rsquo;t allow to reset the password as the old password which was already used which comes under good password policy.</p>
+<p>Reference:<a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/09-Testing_for_Weak_Password_Change_or_Reset_Functionalities">Weak Reset Password implementation</a></p>
+<h3 id="automatic-user-enumeration">Automatic User Enumeration</h3>
+<p><strong>About</strong>: In many application while logging in if we put any one of the credentials wrong  then it shows error message that your password or emailID is invalid or wrong but in some cases it tells you specifically which one of the credential is entered incorrectly because of which an attacker can get to know which credential he has to bruteforce to enter as the other user.</p>
+<h3 id="no-password-required-for-account-deletion">No password required for account deletion</h3>
+<p><strong>About</strong>: In many application it doesn&rsquo;t ask for password before deleting account. If someone leaves his account open in some office,cafe,library then any  intruder can come and try to delete the user&rsquo;s account. Intruder can easily delete the account because the system did not protect it by asking the password to validate that the person deleting the account is the real user.</p>
+<h3 id="simultaneous-sessions-are-being-kept-active-on-the-same-browser">Simultaneous sessions are being kept active on the same browser</h3>
+<p>It&rsquo;s a common request or recommendation that a web application not allow a user to have more than one session active at a time. In other words, after a user logs into an application, he should not be permitted to open a different type of browser (or use another computer) to log in again until his first session has ended.</p>
+<h2 id="medium">Medium</h2>
+<h3 id="no-rate-limiting">No rate Limiting</h3>
+<p><strong>About</strong>: <a href="https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html#rate-limiting">No Rate limiting</a> Application or Server does not keep any restriction on sending the request from one client to server or web-application in a particular time frame which can cause problems to web applications/server. And bad people can perform DDos attacks by creating unusual traffic to server/web applications.</p>
+<p>Reference to learn more:<a href="https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html#rate-limiting">No Rate limiting</a></p>
+<h3 id="failure-to-invalidate-the-session-after-password-change">Failure to invalidate the session after password change</h3>
+<p><strong>About</strong>: In many application once a user changes his password then the application directs him to login page and end his session from everywhere wherever his account was open (on different computers, mobiles). This is a good way to secure user information.</p>
+<h3 id="clickjacking">Clickjacking</h3>
+<p><strong>About</strong>: Clickjacking is an attack that tricks a user into clicking a webpage element which is invisible or disguised as another element. This can cause users to unwittingly download malware, visit malicious web pages,provide credentials or sensitive information, transfer money, or purchase products online.</p>
+<p>Reference to Learn more: <a href="https://owasp.org/www-community/attacks/Clickjacking">Clickjacking</a></p>
+<h3 id="bruteforce-of-password-leading-to-account-takeover">Bruteforce of password leading to account takeover</h3>
+<p><strong>About</strong>: If the Password policies are not followed by the application strictly then it gets very easy to get an user password which can be done by bruteforcing with the Help of BurpSuite.</p>
+<h2 id="high">High</h2>
+<h3 id="insecure-direct-object-reference">Insecure Direct Object Reference</h3>
+<p><strong>About</strong>: An insecure direct object reference <a href="https://portswigger.net/web-security/access-control/idor">(IDOR)</a> is an access control vulnerability. Which occurs when unvalidated input is used to reference or access an object by using an unique ID. If by changing ID the attacker can access the details/object which should not be accessible, it&rsquo;s an IDOR.</p>
+<p>Reference to learn more:<a href="https://portswigger.net/web-security/access-control/idor">Insecure Direct Object Reference</a></p>
+<p><strong>Note</strong>: There are two IDOR present in the application.</p>
+<h3 id="server-side-request-forgeryssrf">Server-side Request Forgery(SSRF)</h3>
+<p><strong>About</strong>: In a Server-Side Request Forgery <a href="https://owasp.org/www-community/attacks/Server_Side_Request_Forgery">(SSRF)</a> victim server makes the http request on the behalf of the attacker to some other mentioned server by the attacker.</p>
+<p>Reference to learn more:<a href="https://owasp.org/www-community/attacks/Server_Side_Request_Forgery">Server-side Request Forgery</a></p>
+<p><strong>Note</strong>: There are two SSRF present in the application. one of which is a blind SSRF</p>
+<h3 id="xssstored-xss">XSS(Stored XSS)</h3>
+<p><strong>About</strong>: <a href="https://portswigger.net/web-security/cross-site-scripting/stored">Stored xss</a> occurs when the application processes and stores untrusted data (malicious javascript) at the server side and includes that data in later http response in a unsafe way which can triggers the malicious javascript as input to application.</p>
+<p>Reference to learn more:<a href="https://portswigger.net/web-security/cross-site-scripting/stored">Stored-Cross Site Scripting</a></p>
+<p><strong>Note</strong>: There are two Stored XSS in the application.</p>
+<h3 id="chaining-of-idor-with-xss">Chaining of IDOR with XSS</h3>
+<p><strong>About</strong>: We can input XSS payload while doing an IDOR attack. These both attacks combined can be too dangerous. Usually as we perform IDOR attack this Attack is also performed in the same way all we have to do is input the xss payload instead of some random input in this to change some credentials like (name,mail, password,bio etc) of the other users account via IDOR.</p>
+<h2 id="critical">Critical</h2>
+<h3 id="jwt-authentication">JWT Authentication</h3>
+<p><strong>About</strong>: JWT(JSON Web Token) are used for authentication and A statement from “RFC 7518 (JSON Web Algorithms) states that &ldquo;A key of the same size as the hash output (for instance, 256 bits for &ldquo;HS256&rdquo;) or larger MUST be used with this algorithm. Because shorter can be brute forced this is the one of the weak points that can occur while implementing jwt.</p>
+<p>Reference to learn more:<a href="https://jwt.io/introduction/">JSON Web Token</a></p>
+<p><strong>Note</strong>:  For JWT challenge, hardcoded email is ‘admin@threadsapp.co.in’. So first make  an account with  the given email id and then try to forge the token.</p>
+<h3 id="nosql-injection">NoSQL Injection</h3>
+<p><strong>About</strong>: It is a vulnerability which can be found in databases such as MongoDB which don&rsquo;t run on Sql queries. In this attacker injects a payload where the application asks for user provided data for example, a web page may request user account credentials in a web form, store authentication information in a MongoDB database, and perform credential checks using JavaScript.</p>
+<p>Reference to Learn more: <a href="https://owasp.org/www-pdf-archive/GOD16-NOSQL.pdf">NoSQL Injection</a></p>
+<p>These are all the challenges present on Threads application which you can solve.
+Happy learning,Happy hacking!</p>
+
+</div>
+
+</div>
+</div>
+<script src="https://enciphers.github.io/ThreadsAppWeb/js/ui.js"></script>
+<script src="https://enciphers.github.io/ThreadsAppWeb/js/menus.js"></script>
+
+
+
+
+<script>
+  
+  if (window.location.hostname != "localhost") {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'Your Google Analytics tracking ID', 'auto');
+    ga('send', 'pageview');
+  }
+</script>
+
+
+
+
+
+<script src="https://enciphers.github.io/ThreadsAppWeb/js/math-code.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+
+
+</body>
+</html>
+
