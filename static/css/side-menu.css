@@ -30,7 +30,7 @@ This is the parent `<div>` that contains the menu and the content area.
 }
     #layout.active #menu {
         left: 150px;
-        width: 150px;
+        width: 175px;
     }
 
     #layout.active .menu-link {
@@ -42,7 +42,7 @@ The content `<div>` is where all your content goes.
 .content {
     margin: 0 auto;
     padding: 0 2em;
-    max-width: 800px;
+    max-width: 750px;
     margin-bottom: 50px;
     line-height: 1.6em;
 }
@@ -81,13 +81,13 @@ appears on the left side of the page.
 
 #menu {
     margin-left: -150px; /* "#menu" width */
-    width: 150px;
+    width: 175px;
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: #191818;
+    background: #191819;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -95,7 +95,7 @@ appears on the left side of the page.
     All anchors inside the menu should be styled like this.
     */
     #menu a {
-        color: #999;
+        color: #997;
         border: none;
         padding: 0.6em 0 0.6em 0.6em;
     }
