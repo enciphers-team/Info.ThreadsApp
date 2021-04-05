@@ -51,7 +51,7 @@ paginate = 10
     name = "Solutions"
     pre = "<i class='fa fa-list fa-fw'></i>"
     weight = 5
-    url = "https://akarsh-enciphers.github.io/Solutions/"
+    url = "http://solutions.threadsapp.co.in/"
   [[menu.main]]
     name = "Upcoming Features"
     pre = "<i class='fa fa-list fa-fw'></i>"
