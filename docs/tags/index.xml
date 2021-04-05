@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on  Threads</title>
-    <link>https://enciphers.github.io/ThreadsAppWeb/tags/</link>
+    <link>https://info.threadsapp.co.in/tags/</link>
     <description>Recent content in Tags on  Threads</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2020. All rights reserved.</copyright><atom:link href="https://enciphers.github.io/ThreadsAppWeb/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2020. All rights reserved.</copyright><atom:link href="https://info.threadsapp.co.in/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
