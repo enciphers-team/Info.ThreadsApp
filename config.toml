@@ -1,5 +1,5 @@
 publishDir = "docs"
-baseurl = "https://enciphers.github.io/ThreadsAppWeb/"
+baseurl = "https://github.com/enciphers/Info.ThreadsApp"
 languageCode = "en-us"
 title = " Threads"
 theme = "blackburn"
