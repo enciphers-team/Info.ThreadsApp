@@ -1,0 +1,86 @@
+{{ partial "header.html" . }}
+
+<div class="header">
+  <h1>Threads</h1>
+  <h2>A Vulnerable Web Application Lab</h2>
+</div>
+
+
+<div class="content">
+
+<h2>About</h2>
+ <ul style="text-align:centre;">
+    <li>It is a Vulnerable Web Application build in Node.js for learning and practicing web application security. It is like a social media platform where people can connect with each other.</li>
+    <li> EJS is used as a frontend development templating engine with bootstrap and a  mix  of  a  simple  HTML, CSS is used to build this vulnerable web application. </li>
+    <li>Express libraries which are used are 
+        <ol>
+           <li>Multer (file upload both with s3 bucket and disk storage).</li>
+           <li>Passport.js (for cookie-based authentication and JWT authentication).</li>
+        </ol>
+     </li>
+    <li>Basically this application contains various vulnerabilities as challenges for you to solve. </li>  
+ </ul>
+
+<h2>How to Install</h2>
+ <ul style="text-align:centre;">
+    <li>To Download: <a href="https://github.com/enciphers/ThreadsApp">Click here</a></li>
+    <li>Check the side bar menu on this website and click on  "Setup" tab to see how to configure the Threads application in your local system.</li>
+ </ul>
+
+<h2>Features</h2>
+This is like a social media application so it consist some of the similar features like:
+ <ul style="text-align:centre;">
+    <li>A user can sign up and create his account  in this application.Then he can Login to the Threads application via Login page. </li>
+    <li>A user can create posts, he/she can also add images to the post he/she creates. </li>
+    <li>A user can also tag other users present on this application in his posts.</li>
+    <li>A user can like, comment on other users posts.</li>
+    <li>A user can share and bookmark other users post.</li>
+    <li>A user can also chat with other users in the group chat section.</li>
+    <li>A user can follow another user and also  can get followed by other users. </li>
+    <li>You can add 25 dummy users to the application by entering 'yes' while installing the application.</li>
+    <li>A user can delete his account after which all information  like his post,bookmarks,likes,comments,following,followers will get deleted</li>
+    <li>Profile section has bio field where you can write about yourself</li>
+ </ul>
+
+<h2> All Challenges</h2>
+ <p>
+    Threads web application consist of various vulnerabilities with different levels of severity like Low, Medium, High & critical. Vulnerabilities are mentioned  according to  their category below 
+ </p>
+<!--the passphrase for solution page is "Testing@threads#00"  -->
+<h4>Low</h4>
+ <ul>
+    <li>Self XSS</li>
+    <li>CSRF(Cross-site Request Forgery)</li>
+    <li>Hidden directories</li>
+    <li>No Password Policy</li>
+    <li>Weak Reset Password Implementation</li>
+    <li>Automatic user Enumeration</li>
+    <li>No Password required for account deletion</li>
+    <li>Simultaneous sessions are being kept active on the same browser </li>
+ </ul>
+
+<h4>Medium</h4>
+ <ul>
+    <li>No rate limiting</li>
+    <li>Failure to invalidate the session after password change</li>
+    <li>Clickjacking</li>
+    <li>Bruteforce of password leading to account takeover</li>
+ </ul>
+
+<h4>High</h4>
+ <ul>
+    <li>IDOR(Insecure Direct Object Reference)</li>
+    <li>Stored XSS(2)</li>
+    <li>SSRF(Server-side Request Forgery)</li>
+    <li>Blind SSRF</li>
+    <li>Account takeover via IDOR</li>
+    <li>Chainning of IDOR with XSS</li>
+ </ul>
+
+<h4>Critical</h4>
+ <ul>
+    <li>JWT Authentication</li>
+    <li>NoSQL Injection</li>
+ </ul>
+
+{{ partial "footer.html" . }}
