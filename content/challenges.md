@@ -26,13 +26,6 @@ Reference to Learn more:[Self-Cross Site Scripting](https://portswigger.net/web-
 **About**: Sometimes Application has hidden directories which are not visible on a public website and these can reveal useful information for potential attacks. Hidden Directories can be found via brute force using a wordlist.
 
 
-### Cross-site Request Forgery(CSRF)
-
-**About**: In this victim executes unwanted actions on behalf of the attacker on an application in which they are authenticated. [CSRF](https://owasp.org/www-community/attacks/csrf) can be done at the places in an application where state change events happen like password change,delete,update and similar. Attackers can trick a victim to click on a link via social engineering and execute the unwanted actions on a web application.
-
- Reference to Learn more:[Cross-site Request Forgery](https://owasp.org/www-community/attacks/csrf).
-
-
 ### No Password Policy
 
 **About**: Sometimes the  application does not require that users should have strong passwords,  which makes it easier for attackers to compromise user accounts. There are many password policy followed by many application like:
