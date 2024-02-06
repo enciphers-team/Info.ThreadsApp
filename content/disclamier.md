@@ -1,5 +1,5 @@
 +++
-title = "Disclamier"
+title = "Disclaimer"
 date = "2020-12-16"
 sidemenu = "true"
 description = "A Vulnerable Web Application Lab"
